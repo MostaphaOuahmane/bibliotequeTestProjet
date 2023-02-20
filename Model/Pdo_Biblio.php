@@ -12,6 +12,7 @@
     private function __constructor(){
         Pdo_Biblio::$monPDO = new PDO(Pdo_Biblio::$bdHoste.';'.Pdo_Biblio::$bdName,Pdo_Biblio::$Utilisateur,Pdo_Biblio::$bdPassword);
         Pdo_Biblio::$monPDO->query(" SET CHARACTER SET utf8");
+       
     
     }
     public function __destruct(){
@@ -25,6 +26,7 @@
         return Pdo_Biblio::$bdoStatu;
     }
     public function getmonPDO(){
+       
         return Pdo_Biblio::$monPDO ;
     }
    } 
