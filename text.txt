@@ -1,0 +1,2 @@
+CREATE USER biblio_user@localhost IDENTIFIED BY 'biblio_pwd';
+GRANT ALL ON bibliotheques.* TO biblio_user@localhost;
