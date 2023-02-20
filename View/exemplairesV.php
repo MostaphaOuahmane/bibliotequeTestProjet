@@ -1,16 +1,18 @@
 <?php
-$exemplaires = array(
-    array("id"=>1, "nom"=>'biblio 1',"date"=> null),
-    array("id"=>2,"nom"=> 'biblio 2', "date"=>"2023-05-02"));
 
-    ?>
+$title = "listee des exemplaires";
+ob_start(); ?>
 
-    <table>
+ 
+
+    <table  class="table">
        <thead>
        <tr>
             
-            <th>Bibliothèque</th>
-            <th>Date de retour</th>
+            <th scope="col">id_exemplaire </th>
+            <th scope="col">id_ouvrage</th>
+            <th scope="col"> 	id_emprunteur</th>
+            <th scope="col"> 	id_bibliotheque</th>
         </tr>
        </thead>
     
@@ -18,16 +20,19 @@ $exemplaires = array(
     <?php
     foreach ($exemplaires as $ex){?>
       <tr>
-        <td><?= $ex["nom"] ?></td>
-        <?php 
-            $exDate = ($ex["date"]===null) ?"disponible":$ex["date"] ;
-            ?>
-        <td><?= $exDate ?></td>
+        <td scope="row"><?= $ex["id_exemplaire"] ?></td>
+        <td><?= $ex["id_ouvrage"] ?></td>
+        <td><?= $ex["id_emprunteur"] ?></td>
+        <td><?= $ex["id_bibliotheque"] ?></td>
       </tr>
     <?php } 
     ?>
     </tbody>
  
     </table>
+    <?php
+$contant = ob_get_clean();
+include("layout.php");
+?>
 
    

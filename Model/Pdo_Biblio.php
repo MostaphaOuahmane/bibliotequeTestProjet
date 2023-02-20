@@ -1,34 +1,15 @@
 <?php 
-   class Pdo_Biblio {
-    private static $bdHoste = 'mysql:host=localhost';
-    private static $bdName = 'dbname=bibliotheques' ;
-    private static $bdPassword="biblio_pwd" ;
-    private static $Utilisateur="biblio_user" ;
-    private static $monPDO ;
-    private static $bdoStatu = null ;
-
-    // constructor
-
-    private function __constructor(){
-        Pdo_Biblio::$monPDO = new PDO(Pdo_Biblio::$bdHoste.';'.Pdo_Biblio::$bdName,Pdo_Biblio::$Utilisateur,Pdo_Biblio::$bdPassword);
-        Pdo_Biblio::$monPDO->query(" SET CHARACTER SET utf8");
-       
     
-    }
-    public function __destruct(){
-        Pdo_Biblio::$monPDO = null;
-    }
-
-    public function getPdo_Biblio(){
-        if(Pdo_Biblio::$bdoStatu=== null){
-            Pdo_Biblio::$bdoStatu = new Pdo_Biblio();
-        }
-        return Pdo_Biblio::$bdoStatu;
-    }
-    public function getmonPDO(){
-       
-        return Pdo_Biblio::$monPDO ;
-    }
+   class Pdo_Biblio {
+    protected static $pdo ;
+        public  static function database () {
+            if(is_null(self::$pdo)) {
+               self::$pdo = new PDO('mysql:dbname=bibliotheques;host=localhost','biblio_user','biblio_pwd');
+                
+            }
+            
+            return static::$pdo ;
+          }
    } 
 
   
