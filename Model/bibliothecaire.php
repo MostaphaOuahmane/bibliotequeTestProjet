@@ -1,5 +1,5 @@
 <?php 
-class Biblio{
+class Bibliothecaire{
     
 }
 ?>
