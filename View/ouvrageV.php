@@ -1,6 +1,16 @@
 <?php
 include_once("Includes/navBar.php");
 ?>
+<summary>Recherche</summary>
+<details>
+    <ol>
+    <?php
+    foreach ($motscles as $motcle) {
+        echo "<li>$motcle</li>";
+    }
+    ?>
+    </ol>
+</details>
 <table>
     <thead>
         <tr>

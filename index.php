@@ -12,6 +12,6 @@ switch ($action) {
         break;
     case 'ouvragesParMotsCles':
         require_once("Controller/OuvrageController.php");
-        OuvrageController::getByKeywords();
+        OuvrageController::getByMotsCles();
         break;
 }
