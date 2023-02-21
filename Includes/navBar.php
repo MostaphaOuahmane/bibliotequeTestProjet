@@ -1,0 +1,2 @@
+Barre de menu
+<hr/>
