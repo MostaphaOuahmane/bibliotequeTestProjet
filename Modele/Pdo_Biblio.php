@@ -2,8 +2,8 @@
    class Pdo_Biblio {
     private static $bdHoste = 'mysql:host=localhost';
     private static $bdName = 'dbname=bibliotheques' ;
-    private static $bdPassword="admin" ;
-    private static $Utilisateur="admin" ;
+    private static $bdPassword="biblio_pwd" ;
+    private static $Utilisateur="biblio_user" ;
     private static $monPDO ;
     private static $bdoStatu = null ;
 
