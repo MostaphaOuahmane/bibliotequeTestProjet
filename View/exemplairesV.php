@@ -1,16 +1,27 @@
 <?php
-$exemplaires = array(
-    array("id"=>1, "nom"=>'biblio 1',"date"=> null),
-    array("id"=>2,"nom"=> 'biblio 2', "date"=>"2023-05-02"));
 
-    ?>
+$title = "liste des exemplaires";
+ob_start(); 
+// if($_SERVER['REQUEST_METHOD'] == 'POST'){
+//     var_dump($_POST);
+// }
+?>
 
-    <table>
+ 
+
+<!-- <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" >
+  <input type="text" placeholder="Entre votre mot" class="mx-3" name="mot">
+  <input type="submit" value="chercher" class="btn btn-success" name="chercher">
+</form> -->
+    <table  class="table">
        <thead>
        <tr>
             
-            <th>Bibliothèque</th>
-            <th>Date de retour</th>
+            
+            <th scope="col"> Titre d'ouvrage</th>
+            <th scope="col"> 	Nom de bibliotheque</th>
+            
+            
         </tr>
        </thead>
     
@@ -18,16 +29,19 @@ $exemplaires = array(
     <?php
     foreach ($exemplaires as $ex){?>
       <tr>
+        <td><?= $ex["titre"] ?></td>
         <td><?= $ex["nom"] ?></td>
-        <?php 
-            $exDate = ($ex["date"]===null) ?"disponible":$ex["date"] ;
-            ?>
-        <td><?= $exDate ?></td>
+       
       </tr>
     <?php } 
     ?>
     </tbody>
  
     </table>
+    <?php
+   
+$contant = ob_get_clean();
+include("layout.php");
+?>
 
    
