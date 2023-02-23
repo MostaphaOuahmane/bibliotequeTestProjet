@@ -11,6 +11,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema bibliotheques
 -- -----------------------------------------------------
+DROP SCHEMA `bibliotheques`;
 CREATE SCHEMA IF NOT EXISTS `bibliotheques` DEFAULT CHARACTER SET utf8 ;
 USE `bibliotheques` ;
 
@@ -49,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `bibliotheques`.`personne` (
   `id_personne` INT NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `mot_de_passe` VARCHAR(64) NOT NULL,
+  est_bibliothecaire TINYINT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id_personne`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC))
 ENGINE = InnoDB;
@@ -93,7 +95,25 @@ CREATE TABLE IF NOT EXISTS `bibliotheques`.`exemplaire` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
+CREATE TABLE IF NOT EXISTS `emprunt` (
+  `id_exemplaire` INT NOT NULL,
+  `id_emprunteur` INT NOT NULL,
+  `date_retour` DATE NOT NULL,
+  `nb_prolongements` INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id_exemplaire`,`id_emprunteur`),
+  CONSTRAINT `fk_emprunt_exemplaire`
+    FOREIGN KEY (`id_exemplaire`)
+    REFERENCES `exemplaire` (`id_exemplaire`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_emprunt_personne`
+    FOREIGN KEY (`id_emprunteur`)
+    REFERENCES `personne` (`id_personne`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+    
+    )
+ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
