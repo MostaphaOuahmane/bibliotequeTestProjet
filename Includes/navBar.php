@@ -3,7 +3,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="index.php?action=list"> la liste des exemplaires</a>
+          <a class="nav-link" href="#"> la liste des exemplaires</a>
         </li>
       
       </ul>
