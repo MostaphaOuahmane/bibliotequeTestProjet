@@ -15,4 +15,3 @@ switch ($action) {
         OuvrageController::getByMotsCles();
         break;
 }
-?>
