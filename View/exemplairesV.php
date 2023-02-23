@@ -2,17 +2,8 @@
 
 $title = "liste des exemplaires";
 ob_start(); 
-// if($_SERVER['REQUEST_METHOD'] == 'POST'){
-//     var_dump($_POST);
-// }
+
 ?>
-
- 
-
-<!-- <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" >
-  <input type="text" placeholder="Entre votre mot" class="mx-3" name="mot">
-  <input type="submit" value="chercher" class="btn btn-success" name="chercher">
-</form> -->
     <table  class="table">
        <thead>
        <tr>
@@ -20,6 +11,7 @@ ob_start();
             
             <th scope="col"> Titre d'ouvrage</th>
             <th scope="col"> 	Nom de bibliotheque</th>
+            <th scope="col"> 	Disponible </th>
             
             
         </tr>
@@ -27,10 +19,16 @@ ob_start();
     
     <tbody>
     <?php
-    foreach ($exemplaires as $ex){?>
+    foreach ($exemplaires as $ex){
+      $dispo = $ex["id_emprunteur"] ===null ?"Disponible":$ex["date_retour"] ;
+     
+      ?>
+   
       <tr>
         <td><?= $ex["titre"] ?></td>
-        <td><?= $ex["nom"] ?></td>
+        <td ><?= $ex["nom"] ?></td> 
+        <td> <?= $dispo ?></td> 
+       
        
       </tr>
     <?php } 
