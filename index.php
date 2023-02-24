@@ -7,9 +7,6 @@ if (!isset($_REQUEST['action'])) {
 
 switch ($action) {
 
-    case 'form':
-        include("View/formV.php");
-        break;
     case 'ouvragesParMotsCles':
         require_once("Controller/OuvrageController.php");
         OuvrageController::getByMotsCles($_GET["expressions"]);
