@@ -5,7 +5,7 @@ class Pdo_Biblio
    public  static function database()
    {
       if (is_null(self::$pdo)) {
-         self::$pdo = new PDO('mysql:dbname=bibliotheques;host=localhost', 'biblio_user', 'biblio_pwd');
+         self::$pdo = new PDO('mysql:dbname=bibliotheques;host=localhost', 'root', '');
       }
       return static::$pdo;
    }
