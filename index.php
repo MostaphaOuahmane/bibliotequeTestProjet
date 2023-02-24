@@ -8,11 +8,17 @@ if (!isset($_REQUEST['action'])) {
 switch ($action) {
 
     case 'accueil':
-        include("View/accueil.php");
+        include("includes/navBar.php");
         break;
+
+        case 'form':
+            include("View/formV.php");
+            break;
     case 'ouvragesParMotsCles':
+        $keywords=$_POST['expressions'];
         require_once("Controller/OuvrageController.php");
-        OuvrageController::getByMotsCles();
+        OuvrageController::getByMotsCles($keywords);
+        include_once("View/ouvrageV.php");
         break;
     case 'exemplaires':
         require_once("Model/ExemplaireDao.php");
@@ -22,4 +28,3 @@ switch ($action) {
        include("view/accueil.php");
        break; 
 }
-?>
