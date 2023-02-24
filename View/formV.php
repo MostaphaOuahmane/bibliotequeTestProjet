@@ -1,8 +1,8 @@
-<html>
+<!-- <html>
 <head>
 	<title>Formulaire de recherche</title>
 
-<form method="GET" action="index.php?action=ouvragesParMotsCles">
+<form method="GET" action="./?action=ouvragesParMotsCles">
   <div class="form-group">
     <label for="expressions">Mots clés :</label>
     <input type="text" class="form-control" id="expressions" name="expressions" placeholder="Entrez les mots clés">
@@ -11,5 +11,5 @@
 </form>
 
 <html>
-<head>
+<head> -->
   

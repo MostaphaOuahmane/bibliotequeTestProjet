@@ -1,6 +1,6 @@
 <?php
 
-$title = "";
+$title = "accueil";
 ob_start(); 
 
 ?>
