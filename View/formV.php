@@ -1,19 +1,15 @@
 <html>
 <head>
 	<title>Formulaire de recherche</title>
-<?//php var_dump($_GET)   //action=" ?action=ouvragesParMotsCles" ?>
-</head>
-<body>
+
+<form method="POST" action="index.php?action=ouvragesParMotsCles">
+  <div class="form-group">
+    <label for="expressions">Mots clés :</label>
+    <input type="text" class="form-control" id="expressions" name="expressions" placeholder="Entrez les mots clés">
+  </div>
+  <button type="submit" class="btn btn-primary">Rechercher</button>
+</form>
+
+<html>
+<head>
   
-	<form  method="get"  >
-		<label for="mots">Mots-clés :</label>
-		<input type="text" id="motscles" name="list">
-		<br><br>
-		<input type="submit" value="Rechercher">
-	</form>
-    <?php  
-    if($_SERVER['REQUEST_METHOD']==="GET"){
-            var_dump($_GET);
-    }?>
-</body>
-</html>

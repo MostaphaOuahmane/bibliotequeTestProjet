@@ -23,7 +23,7 @@ include_once("Includes/navBar.php");
 foreach ($ouvrages as $ouvrage) {
 ?>
     <tr>
-        <td><?= $ouvrage["titre"]?></td>
+        <td> <a href="./?action=exemplaires&id_ouvrage=<?= $ouvrage['id_ouvrage']?>"><?= $ouvrage["titre"]?></a></td>
         <td><?= $ouvrage["prenom_auteur"]?> <?=$ouvrage["nom_auteur"]?></td>
     </tr>
 <?php
