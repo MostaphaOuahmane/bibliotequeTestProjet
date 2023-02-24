@@ -52,21 +52,22 @@ BEGIN
     (5, 'bibliothecaire1@gmail.com', SHA2('tyuiop', 256), 1),
     (6, 'bibliothecaire2@gmail.com', SHA2('ghjkl', 256), 1);
     
-    INSERT INTO exemplaire(id_exemplaire, id_ouvrage, id_emprunteur, id_bibliotheque) VALUES
-    (1, 1, NULL, 1),
-    (2, 1, 1, 2),
-    (3, 1, 2, 3),
-    (4, 2, 1, 1),
-    (5, 2, NULL, 2),
-    (6, 3, 1, 1),
-    (7, 3, NULL, 3),
-    (8, 4, NULL, 1),
-    (9, 4, 1, 3),
-    (10, 5, 2, 1),
-    (11, 5, 1, 3),
-    (12, 6, NULL, 1),
-    (13, 6, 1, 2),
-    (14, 7, NULL, 3);
+    INSERT INTO exemplaire(id_exemplaire, id_ouvrage, id_bibliotheque) VALUES
+    (1, 1, 1),
+    (2, 1, 2),
+    (3, 1, 3),
+    (4, 2, 1),
+    (5, 2, 2),
+    (6, 3, 1),
+    (7, 3, 3),
+    (8, 4, 1),
+    (9, 4, 3),
+    (10, 5, 1),
+    (11, 5, 3),
+    (12, 6, 1),
+    (13, 6, 2),
+    (14, 7, 3);
+    
     INSERT INTO emprunt(id_exemplaire, id_emprunteur, date_retour, nb_prolongements) VALUES
     (1, 1, '2023-02-25',2),
     (2, 1, '2023-03-15',0),

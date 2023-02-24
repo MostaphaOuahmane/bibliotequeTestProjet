@@ -73,20 +73,13 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `bibliotheques`.`exemplaire` (
   `id_exemplaire` INT NOT NULL,
   `id_ouvrage` INT NOT NULL,
-  `id_emprunteur` INT NULL,
   `id_bibliotheque` INT NOT NULL,
   PRIMARY KEY (`id_exemplaire`),
   INDEX `fk_exemplaire_ouvrage_idx` (`id_ouvrage` ASC),
-  INDEX `fk_exemplaire_personne1_idx` (`id_emprunteur` ASC),
   INDEX `fk_exemplaire_bibliotheque1_idx` (`id_bibliotheque` ASC),
   CONSTRAINT `fk_exemplaire_ouvrage`
     FOREIGN KEY (`id_ouvrage`)
     REFERENCES `bibliotheques`.`ouvrage` (`id_ouvrage`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_exemplaire_personne1`
-    FOREIGN KEY (`id_emprunteur`)
-    REFERENCES `bibliotheques`.`personne` (`id_personne`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_exemplaire_bibliotheque1`
