@@ -2,7 +2,8 @@
 include_once("Model/OuvrageDAo.php");
 class OuvrageController {
     /** url: action=ouvragesParMotsCles?motscles=... */
-    public static function getByMotsCles($expressions) {
+    public static function getByMotsCles() {
+        $expressions = filter_input(INPUT_GET, "expressions") or "" ;
         // D'abord tout en dur
         // $ouvrages = [
         //     ["id" => 1, "titre" => 'Harry Potter', "id-auteur" => '1', "prenom_auteur" => "Prenom 1", "nom_auteur" => "nom1"],

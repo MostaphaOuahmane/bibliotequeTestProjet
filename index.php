@@ -14,9 +14,8 @@ switch ($action) {
         include("View/formV.php");
         break;
     case 'ouvragesParMotsCles':
-        $keywords = $_POST['expressions'];
         require_once("Controller/OuvrageController.php");
-        OuvrageController::getByMotsCles($keywords);
+        OuvrageController::getByMotsCles();
         include_once("View/ouvrageV.php");
         break;
     case 'exemplaires':
