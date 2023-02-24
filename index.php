@@ -7,15 +7,12 @@ if (!isset($_REQUEST['action'])) {
 
 switch ($action) {
 
-    case 'accueil':
-        include("includes/navBar.php");
-        break;
     case 'form':
         include("View/formV.php");
         break;
     case 'ouvragesParMotsCles':
         require_once("Controller/OuvrageController.php");
-        OuvrageController::getByMotsCles();
+        OuvrageController::getByMotsCles($_GET["expressions"]);
         include_once("View/ouvrageV.php");
         break;
     case 'exemplaires':
@@ -23,6 +20,6 @@ switch ($action) {
         $exemplaires = ExemplaireDao::getByIdOuvrage($_GET["id_ouvrage"]);
         require_once('View/exemplairesV.php');
     default:
-        include("view/accueil.php");
+        include("View/accueil.php");
         break;
 }

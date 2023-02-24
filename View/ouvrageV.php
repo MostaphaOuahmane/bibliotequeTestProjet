@@ -1,5 +1,7 @@
 <?php
-include_once("Includes/navBar.php");
+
+$title = "liste ouvrage";
+ob_start(); 
 
 ?>
 <summary>Recherche</summary>
@@ -28,6 +30,9 @@ foreach ($ouvrages as $ouvrage) {
     </tr>
 <?php
 }
+
+$contant = ob_get_clean();
+include("layout.php");
 ?>
 
 
