@@ -20,7 +20,7 @@ ob_start();
     <tbody>
     <?php
     foreach ($exemplaires as $ex){
-      $dispo = $ex["id_emprunteur"] ===null ?"Disponible":$ex["date_retour"] ;
+      $dispo = $ex["id_emprunteur"] ===null ?"Disponible": " le ".$ex["date_retour"] ;
      
       ?>
    
