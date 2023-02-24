@@ -2,7 +2,7 @@
 <head>
 	<title>Formulaire de recherche</title>
 
-<form method="POST" action="index.php?action=ouvragesParMotsCles">
+<form method="GET" action="index.php?action=ouvragesParMotsCles">
   <div class="form-group">
     <label for="expressions">Mots clés :</label>
     <input type="text" class="form-control" id="expressions" name="expressions" placeholder="Entrez les mots clés">
